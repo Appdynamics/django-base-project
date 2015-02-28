@@ -44,18 +44,16 @@ Any of these options can added, modified, or removed as you like after creating 
 
 ## Installation
 
-Python 3.4 is required. 
-
-You must have `pip` and `virtualenv` installed. These may already be installed for you. If not, install `pip` with:
+Python 3.4 is required. If you don't have Python 3.4 or higher, download the appropriate package and install:
 
 ```
-sudo easy_install pip
+wget https://www.python.org/ftp/python/3.4.3/python-3.4.3-macosx10.6.pkg
 ```
 
-And then use `pip` to install `virtualenv`:
+Then install virtualenv:
 
 ```
-sudo pip install virtualenv
+sudo pip3 install virtualenv
 ```
 
 Create a virtualenv:
