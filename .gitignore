@@ -1,0 +1,10 @@
+*.pyc
+.pydevproject
+.project
+.DS_Store
+*.komodoproject
+*.swp
+.settings
+.coverage
+.idea
+.sqlite3
