@@ -2,8 +2,11 @@
 setuptools
 Django>=1.7
 djangorestframework
-boto
 django_compressor
+
+# AWS 
+boto
+awsebcli
 
 # Authentication
 python-social-auth
