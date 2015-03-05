@@ -19,10 +19,14 @@ django-celery
 pytest
 pytest-cov
 pytest-django
+mock
 
 # Caching
 django-redis
 
+# Database
+pymysql
+
 # Misc
 requests
-mock
+
