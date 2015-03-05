@@ -25,7 +25,7 @@ mock
 django-redis
 
 # Database
-pymysql
+MySQL-python
 
 # Misc
 requests
