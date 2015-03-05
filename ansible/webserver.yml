@@ -1,0 +1,7 @@
+---
+
+# This file will serve webserver roles
+
+- hosts: all
+  roles:
+    - webserver
