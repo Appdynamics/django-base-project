@@ -1,0 +1,28 @@
+# Base 
+setuptools
+Django>=1.7
+djangorestframework
+django_compressor
+
+# AWS 
+boto
+awsebcli
+
+# Authentication
+python-social-auth
+
+# Async Tasks
+celery
+django-celery
+
+# Testing
+pytest
+pytest-cov
+pytest-django
+
+# Caching
+django-redis
+
+# Misc
+requests
+mock

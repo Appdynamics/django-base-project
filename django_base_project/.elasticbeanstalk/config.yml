@@ -1,0 +1,11 @@
+branch-defaults:
+  master:
+    environment: django-base-project
+global:
+  application_name: django-base-project
+  default_ec2_keyname: aws-eb
+  default_platform: 64bit Debian jessie v1.2.0 running Python 3.4 (Preconfigured -
+    Docker)
+  default_region: us-west-1
+  profile: eb-cli
+  sc: git
