@@ -56,7 +56,7 @@ WSGI_APPLICATION = 'django_base_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'mysql.connector.django',
         'NAME': os.environ.get('RDS_DB_NAME'),
         'USER': os.environ.get('RDS_USERNAME'),
         'PASSWORD': os.environ.get('RDS_PASSWORD'),

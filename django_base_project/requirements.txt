@@ -1,3 +1,6 @@
+# Define all packages that are allowed to be installed externally
+--allow-external mysql-connector-python
+
 # Base 
 setuptools
 Django>=1.7
@@ -25,8 +28,9 @@ mock
 django-redis
 
 # Database
-MySQL-python
+mysql-connector-python
 
 # Misc
 requests
+
 
