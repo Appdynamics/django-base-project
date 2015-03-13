@@ -12,6 +12,9 @@ import unittest
 from django.test import SimpleTestCase, TestCase, Client
 from rest_framework import status
 
+from django.test import LiveServerTestCase
+from selenium.webdriver.firefox.webdriver import WebDriver
+
 class SampleBaseTestCase(unittest.TestCase):
     def setUp(self):
         # Every test needs a client.
@@ -37,3 +40,25 @@ class SampleSimpleTestCase(SimpleTestCase):
         self.assertTrue(
         	status.is_success(self.client.get('/').status_code)
         )
+
+
+class SampleSeleniumTests(LiveServerTestCase):
+    fixtures = ['user-data.json']
+
+    @classmethod
+    def setUpClass(cls):
+        super(SampleSeleniumTests, cls).setUpClass()
+        cls.selenium = WebDriver()
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.selenium.quit()
+        super(SampleSeleniumTests, cls).tearDownClass()
+
+    def test_login(self):
+        self.selenium.get('%s%s' % (self.live_server_url, '/admin/login/'))
+        username_input = self.selenium.find_element_by_name("username")
+        username_input.send_keys('myuser')
+        password_input = self.selenium.find_element_by_name("password")
+        password_input.send_keys('secret')
+        self.selenium.find_element_by_xpath('//input[@value="Log in"]').click()

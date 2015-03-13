@@ -84,6 +84,15 @@ Load initial data. This will create a base admin user with `admin` as the userna
 
 ```
 cd django_base_project
-python3 manage.py loaddata users.json
+python3 manage.py loaddata user-data.json
+```
+
+## Testing
+
+In the provided sample app `sample_app`, we provided test.py that provides some sample test cases that show our certain test classes can be leveraged in your Django application. 
+
+To start the tests, simply run:
+```
+python3 manage.py test
 ```
 
