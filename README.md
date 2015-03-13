@@ -63,3 +63,27 @@ virtualenv -p <PYTHON_3_PATH> ~/virtualenvs/django-base-project
 source ~/virtualenvs/django-base-project/bin/activate
 ~/virtualenvs/django-base-project/bin/pip3 install -r requirements.txt
 ```
+
+## Deployment
+
+When running the project locally for the first time, you need to setup the database.
+
+Activate your virtualenv:
+```
+source ~/virtualenvs/django-base-project/bin/activate
+```
+
+Setup the database. Locally, this will create a new sqllite database
+
+```
+cd django_base_project
+python3 manage.py migrate
+```
+
+Load initial data. This will create a base admin user with `admin` as the username and `changeme` as the password.
+
+```
+cd django_base_project
+python3 manage.py loaddata users.json
+```
+

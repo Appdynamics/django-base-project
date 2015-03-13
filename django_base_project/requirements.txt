@@ -32,5 +32,3 @@ mysql-connector-python
 
 # Misc
 requests
-
-
