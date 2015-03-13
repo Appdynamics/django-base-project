@@ -23,6 +23,7 @@ pytest
 pytest-cov
 pytest-django
 mock
+selenium
 
 # Caching
 django-redis
