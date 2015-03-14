@@ -1,4 +1,6 @@
 """
+Reference: https://docs.djangoproject.com/en/dev/topics/testing/tools/
+
 If your tests rely on database access such as creating or querying models, be sure to 
 create your test classes as subclasses of django.test.TestCase rather than unittest.TestCase.
 
