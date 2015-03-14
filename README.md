@@ -96,3 +96,10 @@ To start the tests, simply run:
 python3 manage.py test
 ```
 
+# Selenium Testing
+
+This project also provides the `selenium` so you can quickly spin up your site (on a different port) and test it against various browsers.
+
+```
+python3 manage.py test django_base_project.sample_app.SampleSeleniumTests
+```
