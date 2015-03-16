@@ -88,6 +88,13 @@ django-base-project/
 
 This Django project comes with a pre-defined rcfile for linting purposes. Edit it to your liking. The project should already be free of any PEP8 warnings or errors.
 
+To lint, just run:
+
+```shell
+cd django-base-project
+pylint --rcfile=.rcfile *
+```
+
 ## Installation
 
 Python 3.4 is required. If you don't have Python 3.4 or higher, download the appropriate package and install:
