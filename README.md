@@ -145,6 +145,7 @@ Build finished. The HTML pages are in _build/html.
 As noted in the above console, your documentation will be built into the _build folder.
 
 For more information on Spinx and how to host your documentation, go to:
+
 1. [http://sphinx-doc.org/tutorial.html](http://sphinx-doc.org/tutorial.html)
 2. [http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/](http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/)
 
