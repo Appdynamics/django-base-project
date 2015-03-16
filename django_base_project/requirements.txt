@@ -31,5 +31,8 @@ django-redis
 # Database
 mysql-connector-python
 
+# Documentation
+Sphinx
+
 # Misc
 requests

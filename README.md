@@ -69,7 +69,7 @@ source ~/virtualenvs/django-base-project/bin/activate
 This template follows the default folder structure recommended by Django:
 
 ```
-django-base-project/<
+django-base-project/
 |---django-base-project/ <-- remember to change the name!
 |   |---sample_app/ 
 |   |   |---__init__.py
