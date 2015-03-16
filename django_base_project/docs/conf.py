@@ -32,6 +32,10 @@ needs_sphinx = '1.0'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.doctest', 
+    'sphinx.ext.intersphinx', 
+    'sphinx.ext.todo', 
+    'sphinx.ext.coverage'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -45,6 +49,14 @@ source_suffix = ['.rst']
 
 # The master toctree document.
 master_doc = 'index'
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+django_base_project_path = os.path.abspath('..')
+sys.path.append(django_base_project_path)
+os.environ['DJANGO_SETTINGS_MODULE'] = 'django_base_project.settings'
+django_base_project = __import__('django_base_project')
 
 # General information about the project.
 project = 'django_base_project'
@@ -109,7 +121,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
