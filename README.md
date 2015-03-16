@@ -72,13 +72,13 @@ This template follows the default folder structure recommended by Django:
 django-base-project/<
 |---django-base-project/ <-- remember to change the name!
 |   |---sample_app/ 
-|   |   |---____init____.py
+|   |   |---__init__.py
 |   |  	|---models.py
 |   |  	|---tests.py <-- all your tests for sample_app should go here.
 |   |   |---urls.py
 |   |   |---views.py
 |   |-- settings/
-|	|	|---___init___.py
+|	|	|---__init__.py
 |	|	|---common.py
 |	|	|---local.py
 |	|	|---dev.py
