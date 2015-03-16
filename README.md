@@ -94,7 +94,7 @@ django-base-project/
 |   |   |---views.py
 |   |-- settings/
 |	|	|---__init__.py
-|	|	|---common.py <-- common settings used by all environments.
+|	|	|---common.py <-- common settings shared by all environments.
 |	|	|---local.py
 |	|	|---dev.py
 |	|	|---qa.py
@@ -133,6 +133,13 @@ Load initial data. This will create a base admin user with `admin` as the userna
 ```
 cd django_base_project
 python3 manage.py loaddata user-data.json
+```
+
+## Ansible
+If you want to deploy this Django app onto an EC2 instance, you can use the provided ansible playbook to do so:
+
+```
+ansible-playbook -i ec2.py -l<ec2_hostname>
 ```
 
 ## Elastic Beanstalk
