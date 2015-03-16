@@ -139,8 +139,8 @@ ansible-playbook -i ec2.py -l<ec2_hostname>
 This project is ready to deploy in Elastic Beanstalk. All you need is to set your AWS credentials like so:
 
 ```shell
-export AWS_ACCESS_KEY_ID="<your_aws_access_key"
-export AWS_SECRET_KEY="<your_aws_secret_key"
+export AWS_ACCESS_KEY_ID="<your_aws_access_key>"
+export AWS_SECRET_KEY="<your_aws_secret_key>"
 ```
 
 Next, initialize your project for Elastic Beanstalk:
