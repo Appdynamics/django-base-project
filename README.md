@@ -95,6 +95,46 @@ cd django-base-project
 pylint --rcfile=.rcfile *
 ```
 
+## Documentation
+
+This project comes with a pre-configured 'Spinx' Makefile. You can edit the conf.py to fit your documentation purposes. 
+
+To autogenerate documentation for your project:
+
+```shell
+cd django-base-project/docs
+make html
+
+sphinx-build -b html -d _build/doctrees   . _build/html
+Running Sphinx v1.3
+making output directory...
+loading pickled environment... not yet created
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 1 source files that are out of date
+updating environment: 1 added, 0 changed, 0 removed
+reading sources... [100%] index                                                                                                                                                                                                               
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [100%] index                                                                                                                                                                                                                
+generating indices... genindex
+writing additional pages... search
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded.
+
+Build finished. The HTML pages are in _build/html.
+```
+
+As noted in the above console, your documentation will be inside the _build folder.
+
+For more information on Spinx and how to host your documentation, go to:
+[1]: http://sphinx-doc.org/tutorial.html
+[2]: http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/
+
 ## Installation
 
 Python 3.4 is required. If you don't have Python 3.4 or higher, download the appropriate package and install:
