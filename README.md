@@ -89,7 +89,7 @@ django-base-project/
 This folder structure enables us to follow Django's principle of an application:
 > The term **application** describes a Python package that provides some set of features. Applications may be *reused* in various projects.
 
-This means that every application should be self contained, and pluggable into any Django project. This is why each app will have it's own `static` and `tests` folder. In the event that you have static assets that can be shared between two more or more applications, you can move either keep separate copies in each app, or move them one level higher into the `static-commons` folder.
+This means that every application should be self contained and pluggable into any Django project. This is why each app has it's own `static` and `tests` folder. In the event that you have static assets that can be shared between two more or more applications, you can move either keep separate copies in each app, or move them one level higher into the `static-commons` folder.
 
 ## Code Quality
 
