@@ -164,11 +164,24 @@ eb deploy
 
 # Testing
 
-In the provided sample app `sample_app`, we provided test.py that provides some sample test cases that show our certain test classes can be leveraged in your Django application. 
+In the provided sample app `sample_app`, there's a tests directory that implements some sample test cases that show how different test classes can be leveraged by the Django application. 
 
 To start the tests, simply run:
 ```
 python3 manage.py test
+```
+
+You should see the following output:
+
+```shell
+python3 manage.py test
+Creating test database for alias 'default'...
+...
+----------------------------------------------------------------------
+Ran 3 tests in 3.049s
+
+OK
+Destroying test database for alias 'default'...
 ```
 
 ## Selenium Testing
