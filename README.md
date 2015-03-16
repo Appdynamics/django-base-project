@@ -146,8 +146,9 @@ ansible-playbook -i ec2.py -l<ec2_hostname>
 
 This project is ready to deploy in Elastic Beanstalk. All you need is to set your AWS credentials like so:
 
-```
-magic!
+```shell
+export AWS_ACCESS_KEY_ID="<your_aws_access_key"
+export AWS_SECRET_KEY="<your_aws_secret_key"
 ```
 
 Next, initialize your project for Elastic Beanstalk:
@@ -161,6 +162,8 @@ Finally, deploy your code!
 ```
 eb deploy
 ```
+
+For more information on deploying a Django app into Elastic Beanstalk, you can visit AWS's documentation here: http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_django.html
 
 # Testing
 
