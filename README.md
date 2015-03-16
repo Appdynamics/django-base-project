@@ -59,7 +59,7 @@ django-base-project/
 |   |   |---__init__.py
 |   |  	|---models/ 
 |   |  	|   |---sample_model.py <-- each model should be its own file.
-|   |  	|---static/
+|   |  	|---static/ <-- all app specific static assets go here.
 |   |  	|   |---css/
 |   |  	|   |---images/
 |   |  	|   |---js/
@@ -75,13 +75,13 @@ django-base-project/
 |	|	|---qa.py
 |	|	|---staging.py
 |	|	|---production.py
-|	|---static_common/ <-- if applicable, shared static assets by different apps go here.
+|	|---static_common/ <-- (optional) shared static assets by different apps go here.
 |	|	|---css/
 |	|	|---images/
 |	|	|---js/
 |   |---manage.py
-|   |---requirements.txt
-|   |---user-data.json <- fixture to create your admin user.
+|   |---requirements.txt <-- all required packages for your Django project to work.
+|   |---user-data.json <-- fixture to create your admin user.
 ```
 
 ### Philosophy
@@ -113,7 +113,11 @@ To autogenerate documentation for your project:
 ```shell
 cd django-base-project/docs
 make html
+```
 
+You should see the following output:
+
+```shell
 sphinx-build -b html -d _build/doctrees   . _build/html
 Running Sphinx v1.3
 making output directory...
@@ -138,11 +142,11 @@ build succeeded.
 Build finished. The HTML pages are in _build/html.
 ```
 
-As noted in the above console, your documentation will be inside the _build folder.
+As noted in the above console, your documentation will be built into the _build folder.
 
 For more information on Spinx and how to host your documentation, go to:
-[1]: http://sphinx-doc.org/tutorial.html
-[2]: http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/
+1. [http://sphinx-doc.org/tutorial.html](http://sphinx-doc.org/tutorial.html)
+2. [http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/](http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/)
 
 ## Installation
 
