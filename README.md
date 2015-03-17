@@ -89,13 +89,13 @@ This template follows the default folder structure recommended by Django:
 This folder structure enables us to follow Django's principle of an application:
 > The term **application** describes a Python package that provides some set of features. Applications may be *reused* in various projects.
 
-This means that every application should be self contained and pluggable into any Django project. This is why each app has it's own `static` and `tests` folder. In the event that you have static assets that can be shared between two more or more applications, you can move either keep separate copies in each app, or move them one level higher into the `static-commons` folder.
+This means that every application should be self contained and pluggable into any Django project. This is why each app has it's own `static` and `tests` folder. In the event that you have static assets that can be shared between two more or more applications, you can either keep separate copies in each app, or move them one level higher into the `static-commons` folder.
 
 ## Code Quality
 
 ### Pylint
 
-This Django project comes with a pre-defined rcfile for linting purposes. Edit it to your liking. The project should already be free of any PEP8 warnings or errors.
+This Django project comes with a pre-configured rcfile for linting purposes. Edit it to your liking. The project should already be free of any PEP8 warnings and errors.
 
 To lint, just run:
 
@@ -144,7 +144,7 @@ Build finished. The HTML pages are in _build/html.
 
 As noted in the above console, your documentation will be built into the _build folder.
 
-For more information on 'Spinx' and how to host your documentation, go to:
+For more information on `Spinx` and how to host your documentation, go to:
 
 1. [http://sphinx-doc.org/tutorial.html](http://sphinx-doc.org/tutorial.html)
 2. [http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/](http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/)
@@ -185,7 +185,8 @@ django-admin.py startproject --template=https://github.com/Appdynamics/django-ba
 Now, install the rest of the packages that are required by your Django project:
 
 ```shell
-~/virtualenvs/{{ project_name }}/bin/pip3 install -r {{ project_name }}/{{ project_name }}/requirements.txt
+cd {{ project_name }}
+~/virtualenvs/{{ project_name }}/bin/pip3 install -r {{ project_name }}/requirements.txt
 ```
 
 ## Deployment
