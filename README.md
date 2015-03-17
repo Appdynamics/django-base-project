@@ -234,7 +234,7 @@ Destroying test database for alias 'default'...
 
 ### Selenium Testing
 
-This project also provides the `selenium` so you can quickly spin up your site (on a different port) and test it against various browsers.
+This project utilizes the `selenium` module so you can quickly spin up your site (on a different port) and test it against various browsers. It utilizes Django's '--liveserver' parameter.
 
 ```shell
 python3 manage.py test {{ project_name }}.sample_app.SampleSeleniumTests
