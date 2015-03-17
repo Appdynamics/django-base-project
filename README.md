@@ -148,8 +148,8 @@ As noted in the above console, your documentation will be built into the _build 
 
 For more information on `Spinx` and how to host your documentation, go to:
 
-1. [http://sphinx-doc.org/tutorial.html](http://sphinx-doc.org/tutorial.html)
-2. [http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/](http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/)
+1. http://sphinx-doc.org/tutorial.html
+2. http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/
 
 ## Installation
 
@@ -242,7 +242,9 @@ Finally, deploy your code!
 eb deploy
 ```
 
-For more information on deploying a Django app into Elastic Beanstalk, you can visit AWS's documentation here: http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_django.html
+For more information on deploying a Django app into Elastic Beanstalk, you can visit AWS's documentation here: 
+
+1. http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create_deploy_Python_django.html
 
 ## Testing
 
