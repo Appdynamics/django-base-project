@@ -28,12 +28,12 @@ class Kid(models.Model):
     appointment = models.DateTimeField()
 
     class Meta:
-        verbose_name = _(u'Kid')
-        verbose_name_plural = _(u'Kids')
+        verbose_name = u'Kid'
+        verbose_name_plural = u'Kids'
 
     def __unicode__(self):
         """
-        Retorn the name of kid
+        Return the name of kid
         """
         return u'%s' % (self.name)
 
