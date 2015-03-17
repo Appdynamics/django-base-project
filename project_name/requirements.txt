@@ -23,6 +23,7 @@ pytest
 pytest-cov
 pytest-django
 mock
+model_mommy
 selenium
 
 # Caching
