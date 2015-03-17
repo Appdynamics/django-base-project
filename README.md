@@ -242,6 +242,34 @@ python3 manage.py test {{ project_name }}.sample_app.SampleSeleniumTests
 
 ### Code Coverage
 
+The 'coverage' module is also available to provide a report of how well your Django project is covered by unit tests. 
+
+To create a coverage report, simply run:
+
+```shell
+coverage run manage.py test
+```
+
+Afterwards, you can view the report by:
+
+```shell
+$ coverage report -m
+Name                      Stmts   Miss  Cover   Missing
+-------------------------------------------------------
+my_program                   20      4    80%   33-35, 39
+my_other_module              56      6    89%   17-23
+-------------------------------------------------------
+TOTAL                        76     10    87%
+```
+
+For a nicer presentation, use coverage html to get annotated HTML listings detailing missed lines:
+
+```shell
+$ coverage html
+```
+
+For more information, visit https://coverage.readthedocs.org.
+
 ## Documentation
 
 This project comes with a pre-configured `Spinx` Makefile. You can edit the conf.py to fit your documentation purposes. 
