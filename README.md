@@ -1,6 +1,8 @@
 django-base-project
 ===================
-This is a base django project that comes with everything we need to get started on fun, innovative stuff.
+This is a base django project that comes with everything we need to get started on fun, innovative stuff. 
+
+Note: You'll notice that the entire project is sprinkled with the `{{ project_name }}` template tag. This enables the entire codebase to be be used a base template when running the `startproject` command.
 
 ## Features ##
 
@@ -209,7 +211,6 @@ python3 manage.py migrate
 Load initial data. This will create a base admin user with `admin` as the username and `changeme` as the password.
 
 ```shell
-cd {{ project_name }}
 python3 manage.py loaddata user-data.json
 ```
 
