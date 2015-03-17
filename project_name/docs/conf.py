@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# django_base_project documentation build configuration file, created by
+# {{ project_name }} documentation build configuration file, created by
 # sphinx-quickstart on Mon Mar 16 12:31:03 2015.
 #
 # This file is execfile()d with the current directory set to its
@@ -53,13 +53,13 @@ master_doc = 'index'
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-django_base_project_path = os.path.abspath('..')
-sys.path.append(django_base_project_path)
-os.environ['DJANGO_SETTINGS_MODULE'] = 'django_base_project.settings'
-django_base_project = __import__('django_base_project')
+project_path = os.path.abspath('..')
+sys.path.append(project_path)
+os.environ['DJANGO_SETTINGS_MODULE'] = '{{ project_name }}.settings'
+django_project = __import__('{{ project_name }}')
 
 # General information about the project.
-project = 'django_base_project'
+project = '{{ project_name }}'
 copyright = '2015, _author_'
 author = '_author_'
 
@@ -213,7 +213,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'django_base_projectdoc'
+htmlhelp_basename = '{{ project_name }}doc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -235,7 +235,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'django_base_project.tex', 'django\\_base\\_project Documentation',
+  (master_doc, '{{ project_name }}.tex', 'django\\_base\\_project Documentation',
    '\\_author\\_', 'manual'),
 ]
 
@@ -265,7 +265,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'django_base_project', 'django_base_project Documentation',
+    (master_doc, '{{ project_name }}', '{{ project_name }} Documentation',
      [author], 1)
 ]
 
@@ -279,8 +279,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  (master_doc, 'django_base_project', 'django_base_project Documentation',
-   author, 'django_base_project', 'One line description of project.',
+  (master_doc, '{{ project_name }}', '{{ project_name }} Documentation',
+   author, '{{ project_name }}', 'One line description of project.',
    'Miscellaneous'),
 ]
 

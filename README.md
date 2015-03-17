@@ -184,14 +184,14 @@ source ~/virtualenvs/django-base-project/bin/activate
 Setup the database. Locally, this will create a new sqllite database
 
 ```shell
-cd django_base_project
+cd {{ project_name }}
 python3 manage.py migrate
 ```
 
 Load initial data. This will create a base admin user with `admin` as the username and `changeme` as the password.
 
 ```shell
-cd django_base_project
+cd {{ project_name }}
 python3 manage.py loaddata user-data.json
 ```
 
@@ -252,7 +252,7 @@ Destroying test database for alias 'default'...
 This project also provides the `selenium` so you can quickly spin up your site (on a different port) and test it against various browsers.
 
 ```shell
-python3 manage.py test django_base_project.sample_app.SampleSeleniumTests
+python3 manage.py test {{ project_name }}.sample_app.SampleSeleniumTests
 ```
 
 ## Code Coverage

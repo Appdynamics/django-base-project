@@ -1,4 +1,4 @@
-from django_base_project.settings.common import *
+from {{ project_name }}.settings.common import *
 
 DATABASES = {
     'default': {
