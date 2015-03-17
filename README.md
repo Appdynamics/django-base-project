@@ -27,12 +27,17 @@ Caching:
 Testing:
 - pytest
 - pytest-coverage
+- mock
+- selenium
 
 Authentication:
 - python-social-auth for OAuth with social networks
 
 Amazon:
 - boto for integration with AWS
+
+Documentation:
+- Sphinx for autodocs
 
 Any of these options can added, modified, or removed as you like after creating your project.
 
@@ -93,63 +98,7 @@ This folder structure enables us to follow Django's principle of an application:
 
 This means that every application should be self contained and pluggable into any Django project. This is why each app has it's own `static` and `tests` folder. In the event that you have static assets that can be shared between two more or more applications, you can either keep separate copies in each app, or move them one level higher into the `static-commons` folder.
 
-## Code Quality
-
-### Pylint
-
-This Django project comes with a pre-configured rcfile for linting purposes. Edit it to your liking. The project should already be free of any PEP8 warnings and errors.
-
-To lint, just run:
-
-```shell
-cd {{ project_name }}
-pylint --rcfile=.rcfile *
-```
-
-## Documentation
-
-This project comes with a pre-configured `Spinx` Makefile. You can edit the conf.py to fit your documentation purposes. 
-
-To auto-generate documentation for your project:
-
-```shell
-cd {{ project_name }}/docs
-make html
-```
-
-You should see the following output:
-
-```shell
-sphinx-build -b html -d _build/doctrees   . _build/html
-Running Sphinx v1.3
-making output directory...
-loading pickled environment... not yet created
-building [mo]: targets for 0 po files that are out of date
-building [html]: targets for 1 source files that are out of date
-updating environment: 1 added, 0 changed, 0 removed
-reading sources... [100%] index                                                                                                                                                                                                               
-looking for now-outdated files... none found
-pickling environment... done
-checking consistency... done
-preparing documents... done
-writing output... [100%] index                                                                                                                                                                                                                
-generating indices... genindex
-writing additional pages... search
-copying static files... done
-copying extra files... done
-dumping search index in English (code: en) ... done
-dumping object inventory... done
-build succeeded.
-
-Build finished. The HTML pages are in _build/html.
-```
-
-As noted in the above console, your documentation will be built into the _build folder.
-
-For more information on `Spinx` and how to host your documentation, go to:
-
-1. http://sphinx-doc.org/tutorial.html
-2. http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/
+# Getting Started
 
 ## Installation
 
@@ -165,7 +114,7 @@ Then install virtualenv:
 sudo pip3 install virtualenv
 ```
 
-Create a virtualenv for {{ project_name }}:
+Create a virtualenv for {{ project_name }} and activate it:
 
 ```shell
 virtualenv -p <PYTHON_3_PATH> ~/virtualenvs/{{ project_name }}
@@ -182,37 +131,52 @@ Create a new Django project using this project as a base template:
 
 ```shell
 django-admin.py startproject --template=https://github.com/Appdynamics/django-base-project/archive/master.zip --extension=py,rst,html,config {{ project_name }}
+cd {{ project_name }}/{{ project_name }}
 ```
 
 Now, install the rest of the packages that are required by your Django project:
 
 ```shell
-cd {{ project_name }}
-~/virtualenvs/{{ project_name }}/bin/pip3 install -r {{ project_name }}/requirements.txt
-```
-
-## Deployment
-
-### Local 
-When running the project locally for the first time, you need to setup the database.
-
-Activate your virtualenv:
-```shell
-source ~/virtualenvs/{{ project_name }}/bin/activate
+~/virtualenvs/{{ project_name }}/bin/pip3 install -r requirements.txt
 ```
 
 Setup the database. Locally, this will create a new sqllite database
 
 ```shell
-cd {{ project_name }}
-python3 manage.py migrate
+~/virtualenvs/{{ project_name }}/bin/python3 manage.py migrate
+
+OUTPUT:
+Operations to perform:
+  Apply all migrations: contenttypes, sessions, admin, auth
+Running migrations:
+  Applying contenttypes.0001_initial... OK
+  Applying auth.0001_initial... OK
+  Applying admin.0001_initial... OK
+  Applying sessions.0001_initial... OK
 ```
 
 Load initial data. This will create a base admin user with `admin` as the username and `changeme` as the password.
 
 ```shell
-python3 manage.py loaddata user-data.json
+~/virtualenvs/{{ project_name }}/bin/python3 manage.py loaddata user-data.json
+
+OUTPUT:
+Installed 1 object(s) from 1 fixture(s)
 ```
+
+Start the Django server:
+
+```shell
+~/virtualenvs/{{ project_name }}/bin/python3 manage.py runserver
+```
+
+Your Django project is now live, locally. In your browser, go to: http://localhost:8000. 
+
+## Deployment (AWS)
+
+Once you get to a point where you want to start hosting your Django project live, there are two options: using the provided `ansible` playbook to provision onto an EC2 instance, or using AWS's Elastic Beanstalk. 
+
+**Note:** At this time, Elastic Beanstalk does not officially support Python3 apps. 
 
 ### Ansible
 If you want to deploy this Django app onto an EC2 instance, you can use the provided ansible playbook to do so:
@@ -277,4 +241,62 @@ python3 manage.py test {{ project_name }}.sample_app.SampleSeleniumTests
 ```
 
 ### Code Coverage
+
+## Documentation
+
+This project comes with a pre-configured `Spinx` Makefile. You can edit the conf.py to fit your documentation purposes. 
+
+To auto-generate documentation for your project:
+
+```shell
+cd {{ project_name }}/docs
+make html
+```
+
+You should see the following output:
+
+```shell
+sphinx-build -b html -d _build/doctrees   . _build/html
+Running Sphinx v1.3
+making output directory...
+loading pickled environment... not yet created
+building [mo]: targets for 0 po files that are out of date
+building [html]: targets for 1 source files that are out of date
+updating environment: 1 added, 0 changed, 0 removed
+reading sources... [100%] index                                                                                                                                                                                                               
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+writing output... [100%] index                                                                                                                                                                                                                
+generating indices... genindex
+writing additional pages... search
+copying static files... done
+copying extra files... done
+dumping search index in English (code: en) ... done
+dumping object inventory... done
+build succeeded.
+
+Build finished. The HTML pages are in _build/html.
+```
+
+As noted in the above console, your documentation will be built into the _build folder.
+
+For more information on `Spinx` and how to host your documentation, go to:
+
+1. http://sphinx-doc.org/tutorial.html
+2. http://bash-shell.net/blog/2014/apr/19/private-read-docs-private-github-repo/
+
+## Code Quality
+
+### Pylint
+
+This Django project comes with a pre-configured rcfile for linting purposes. Edit it to your liking. The project should already be free of any PEP8 warnings and errors.
+
+To lint, just run:
+
+```shell
+cd {{ project_name }}
+pylint --rcfile=.rcfile *
+```
 
