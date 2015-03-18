@@ -63,7 +63,7 @@ This template follows the default folder structure recommended by Django:
 |   |   |---conf.py <-- edit this file for default doc values.
 |   |   |---Makefile
 |   |---sample_app/ 
-|   |   |---__init__.py
+|   |   |---admin.py <-- expose this app to Django admin
 |   |  	|---models/ 
 |   |  	|   |---sample_model.py <-- each model should be its own file.
 |   |  	|---static/ <-- all app specific static assets go here.
