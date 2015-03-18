@@ -19,7 +19,7 @@ class Kid(models.Model):
     """
     Model class Kid of family app
     """
-    happy = models.BooleanField()
+    happy = models.BooleanField(default=True)
     name = models.CharField(max_length=30)
     age = models.IntegerField()
     bio = models.TextField()
