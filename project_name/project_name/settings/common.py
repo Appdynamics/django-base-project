@@ -30,8 +30,18 @@ ALLOWED_HOSTS = []
 # Each member of the tuple should be a tuple of (Full name, email address)
 ADMINS = ()
 
-# Application definition
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # Default Django Context Processors
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages",
+)
 
+# Application definition
 INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.auth',
