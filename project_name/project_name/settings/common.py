@@ -23,6 +23,10 @@ DEBUG = True
 
 TEMPLATE_DEBUG = True
 
+TEMPLATE_DIRS = (
+    '{{ project_name }}/sample_app/templates',
+)
+
 ALLOWED_HOSTS = []
 
 # A tuple that lists people who get code error notifications. When DEBUG=False and a view 

@@ -10,7 +10,7 @@ from model_mommy import mommy
 from model_mommy.recipe import Recipe, foreign_key
 
 # Relative imports of the 'app-name' package
-from {{ project_name }}.sample_app.models import Kid
+from {{ project_name }}.sample_app.models import Kid, Dog
 
 class KidTestModel(TestCase):
     """
@@ -25,7 +25,7 @@ class KidTestModel(TestCase):
         self.kid = mommy.make(Kid)
 
     def test_creating_multiple_kids(self):
-        kids = mommy.make('family.Kid', _quantity=3)
+        kids = mommy.make(Kid, _quantity=3)
         assert len(kids) == 3
 
 class DogTestModel(TestCase):
@@ -38,7 +38,7 @@ class DogTestModel(TestCase):
         """
         Set up all the tests
         """
-        self.rex = mommy.make('family.Dog')
+        self.rex = mommy.make(Dog)
 
 
 class KidTestModel(TestCase):
@@ -57,7 +57,7 @@ class KidTestModel(TestCase):
     	assert self.kid != None
 
     def test_creating_multiple_kids(self):
-        kids = mommy.make('{{ project_name }}.Kid', _quantity=3)
+        kids = mommy.make(Kid, _quantity=3)
         assert len(kids) == 3
 
 class DogTestModel(TestCase):
@@ -70,14 +70,13 @@ class DogTestModel(TestCase):
         """
         Set up all the tests
         """
-        self.rex = mommy.make('{{ project_name }}.Dog')
+        self.rex = mommy.make(Dog)
 
     def test_dog_creation(self):
     	assert self.rex != None
 
     def test_creating_multiple_dogs(self):
-        dogs = mommy.make('{{ project_name }}.Dog', _quantity=3)
-        dogs = mommy.make('sample_app.Dog', _quantity=3)
+        dogs = mommy.make(Dog, _quantity=3)
         assert len(dogs) == 3
         
         for dog in dogs:
