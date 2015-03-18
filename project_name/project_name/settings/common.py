@@ -51,7 +51,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     # Your applications
-    'sample_app'
+    '{{ project_name }}.sample_app'
 )
 
 MIDDLEWARE_CLASSES = (

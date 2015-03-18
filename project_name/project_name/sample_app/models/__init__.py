@@ -1,1 +1,1 @@
-from sample_app.models.sample_model import *
+from {{ project_name }}.sample_app.models.sample_model import *
